@@ -1,0 +1,16 @@
+{
+    "name": "asifmuztaba/phpmvc",
+    "description": "This is a model view controller framework design in raw php",
+    "autoload": {
+        "psr-4": {
+            "Phpmvc\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "asif-muztaba",
+            "email": "amuztaba18@gmail.com"
+        }
+    ],
+    "require": {}
+}

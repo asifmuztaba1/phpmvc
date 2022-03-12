@@ -1,11 +1,8 @@
 <?php
 require_once "vendor/autoload.php";
 use Phpmvc\Src\Core\App;
-
-$app=new App();
-$app->router->get('/contact',function (){
-    return "Contact";
-});
-$app->router->get('/','contact');
+$app=new App(dirname(__DIR__).'\phpMvcCreation\src/');
+$app->router->get('/contact','contact');
+$app->router->get('/','home');
 
 $app->run();

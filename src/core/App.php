@@ -1,13 +1,18 @@
 <?php
 namespace Phpmvc\Src\Core;
 class App{
-
+    public static string $PROJECT_ROOT;
     public Router $router;
     public Request $request;
-    public function __construct()
+    public Response $response;
+    public static App $app;
+    public function __construct($root)
     {
+        self::$PROJECT_ROOT=$root;
+        self::$app=$this;
         $this->request=new Request();
-        $this->router=new Router($this->request);
+        $this->response=new Response();
+        $this->router=new Router($this->request,$this->response);
     }
 
     public function run()

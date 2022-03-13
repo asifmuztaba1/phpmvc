@@ -20,11 +20,14 @@ class Router
     {
         $this->routes['get'][$path]=$callback;
     }
-
+    public function post($path, $callback)
+    {
+        $this->routes['post'][$path]=$callback;
+    }
     public function resolve()
     {
         $path=str_replace('/phpMvcCreation','',$this->request->getPath());
-        $method = $this->request->getMethod();
+        $method = $this->request->method();
         $callback = $this->routes[$method][$path]?? false;
         if(!$callback){
             App::$app->response->setStatusCode(404);
@@ -33,13 +36,18 @@ class Router
         if(is_string($callback)){
             return $this->renderView($callback);
         }
-        return $callback();
+        if(is_array($callback)){
+            [$controllerClass, $controllerMethod] = $callback;
+            $objectToClass=new $controllerClass();
+            return $objectToClass->$controllerMethod($this->request);
+        }
+        return $callback($this->request);
     }
 
-    private function renderView(string $view)
+    public function renderView(string $view,$params=[])
     {
         $layoutContent=$this->layoutContent();
-        $viewCont=$this->renderViewCont($view);
+        $viewCont=$this->renderViewCont($view,$params);
         return str_replace('{{yeildblock}}',$viewCont,$layoutContent);
     }
 
@@ -49,8 +57,11 @@ class Router
         include_once App::$PROJECT_ROOT."views/layouts/layout.php";
         return ob_get_clean();
     }
-    private function renderViewCont($view){
+    private function renderViewCont($view,$params){
         ob_start();
+        foreach ($params as $key=>$value){
+            $$key=$value;
+        }
         include_once App::$PROJECT_ROOT."views/$view.php";
         return ob_get_clean();
     }

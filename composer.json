@@ -12,5 +12,7 @@
             "email": "amuztaba18@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }

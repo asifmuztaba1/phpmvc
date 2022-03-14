@@ -37,8 +37,8 @@ class Validator
                 if($rulename==self::VR_MIN && strlen($value)<$rule['min']){
                     $this->addErrors($attribute,self::VR_MIN,$rule);
                 }
-                if($rulename==self::VR_MAX && strlen($value)<$rule['max']){
-                    $this->addErrors($attribute,self::VR_MIN,$rule);
+                if($rulename==self::VR_MAX && strlen($value)>$rule['max']){
+                    $this->addErrors($attribute,self::VR_MAX,$rule);
                 }
             }
         }
@@ -59,8 +59,8 @@ class Validator
         return [
             self::VR_REQUIRED=>"This field is required",
             self::VR_EMAIL=>"This Must be an email",
-            self::VR_MAX=>"The maximum length of the input should me {max}",
-            self::VR_MIN=>"The minimum length of the input should me {min}",
+            self::VR_MAX=>"The maximum length of the input should be {max}",
+            self::VR_MIN=>"The minimum length of the input should be {min}",
         ];
     }
     public function hasError($attribute)

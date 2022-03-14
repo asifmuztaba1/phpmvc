@@ -1,7 +1,9 @@
+<?php
+?>
 <div class="container">
-    <form action="" method="post">
+    <form action="" method="post" id="homeForm">
         <label for="amount">Amount</label>
-        <input type="text" id="amount" name="amount" class="<?=$formModel->validate->hasError('amount')?'is-error':''?>" value="<?=$formModel->amount?>">
+        <input type="number" id="amount" name="amount" class="<?=$formModel->validate->hasError('amount')?'is-error':''?>" value="<?=$formModel->amount?>">
         <div class="error-message">
             <?=$formModel->validate->hasError('amount')?$formModel->validate->getFirstError('amount'):''?>
         </div>
@@ -41,11 +43,11 @@
             <?=$formModel->validate->hasError('phone')?$formModel->validate->getFirstError('phone'):''?>
         </div>
         <label for="entry_by">Entry By</label>
-        <input type="text" id="entry_by" name="entry_by" class="<?=$formModel->validate->hasError('entry_by')?'is-error':''?>" value="<?=$formModel->entry_by?>">
+        <input type="number" id="entry_by" name="entry_by" class="<?=$formModel->validate->hasError('entry_by')?'is-error':''?>" value="<?=$formModel->entry_by?>">
         <div class="error-message">
             <?=$formModel->validate->hasError('entry_by')?$formModel->validate->getFirstError('entry_by'):''?>
         </div>
-        <input type="submit" id="submit" name="submit" value="submit">
+        <center><input type="submit" id="submit" name="submit" value="submit"></center>
     </form>
 </div>
 

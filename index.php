@@ -11,8 +11,8 @@ $config=[
 ];
 $app=new App(dirname(__DIR__).'\phpMvcCreation\src/',$config);
 $app->router->get('/',[HomeController::class,'store']);
-$app->router->post('/',[HomeController::class,'store']);
-$app->router->get('/contact',[HomeController::class,'index']);
-$app->router->post('/contact',[HomeController::class,'store']);
+$app->router->get('/home',[HomeController::class,'store']);
+$app->router->post('/home',[HomeController::class,'store']);
+$app->router->get('/report',[HomeController::class,'getReport']);
 
 $app->run();

@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: cursive;
+    font-family: sans-serif;
 }
 a {
     text-decoration: none;
@@ -48,7 +48,7 @@ li {
 .menu li {
     padding: 5px 14px;
 }
-input[type=text],textarea,input[type=email] {
+input[type=text],input[type=number],textarea,input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -59,4 +59,46 @@ input[type=text],textarea,input[type=email] {
 }
 .is-error{
     border: 1px solid red;
+}
+#reportFilterInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#reportFilterTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#reportFilterTable th, #reportFilterTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#reportFilterTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#reportFilterTable tr.header, #reportFilterTable tr:hover {
+    background-color: #f1f1f1;
+}
+.table-container{
+    width: 100%;
+    overflow-x: scroll;
+}
+input[type=submit]{
+    background: #4c9e9e;
+    padding: 10px 30px;
+    border: 1px solid white;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
 }

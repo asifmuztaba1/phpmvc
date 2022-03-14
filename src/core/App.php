@@ -12,7 +12,6 @@ class App{
         self::$PROJECT_ROOT=$root;
         self::$app=$this;
         self::$db=new Database($config['host'],$config['db_name'],$config['username'],$config['password']);
-        var_dump(self::$db);
         $this->request=new Request();
         $this->response=new Response();
         $this->router=new Router($this->request,$this->response);

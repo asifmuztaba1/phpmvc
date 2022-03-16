@@ -48,11 +48,12 @@ li {
 .menu li {
     padding: 5px 14px;
 }
-input[type=text],input[type=number],textarea,input[type=email] {
+input[type=text],input[type=number],textarea,input[type=email],select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    min-height: 43px;
 }
 .error-message{
     color: red;
@@ -61,7 +62,6 @@ input[type=text],input[type=number],textarea,input[type=email] {
     border: 1px solid red;
 }
 #reportFilterInput {
-    background-image: url('/css/searchicon.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
     width: 100%;
@@ -81,6 +81,7 @@ input[type=text],input[type=number],textarea,input[type=email] {
 #reportFilterTable th, #reportFilterTable td {
     text-align: left;
     padding: 12px;
+    border: 1px solid #ddd;
 }
 
 #reportFilterTable tr {
@@ -101,4 +102,15 @@ input[type=submit]{
     color: #fff;
     font-size: 20px;
     text-transform: capitalize;
+    cursor: pointer;
+}
+label{
+    margin: 8px 0;
+}
+.chosen-container {
+    margin: 8px 0;
+}
+.filterDive{
+    max-width: 300px;
+    margin-left: auto;
 }

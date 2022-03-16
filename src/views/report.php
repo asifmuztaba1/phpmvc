@@ -1,6 +1,8 @@
 <div class="container">
     <h2>List of Buyers</h2>
-    <input type="date" id="reportFilterInput" onchange="reportFilter()" placeholder="Search for Items" title="Type">
+    <div class="filterDive">
+        <input type="text" id="reportFilterInput" onchange="reportFilter()" placeholder="Search By Date" title="Type">
+    </div>
     <div class="table-container">
         <table id="reportFilterTable">
             <tr class="header">

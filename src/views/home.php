@@ -18,7 +18,14 @@
             <?=$formModel->validate->hasError('receipt_id')?$formModel->validate->getFirstError('receipt_id'):''?>
         </div>
         <label for="items">Items</label>
-        <input type="text" id="items" name="items" class="<?=$formModel->validate->hasError('items')?'is-error':''?>" value="<?=$formModel->items?>">
+        <select type="text" id="items" name="items" class="<?=$formModel->validate->hasError('items')?'is-error':''?>" multiple>
+            <option value="">Select Items</option>
+            <option value="itemA">Item A</option>
+            <option value="itemB">Item B</option>
+            <option value="itemC">Item C</option>
+            <option value="itemD">Item D</option>
+            <option value="itemE">Item E</option>
+        </select>
         <div class="error-message">
             <?=$formModel->validate->hasError('items')?$formModel->validate->getFirstError('items'):''?>
         </div>

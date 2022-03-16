@@ -1,4 +1,4 @@
-const MINUIT_TO_BLOCK=1;
+const MINUIT_TO_BLOCK=24*60;
 const onlyNumbers = new RegExp('^[0-9]*$');
 const textSpaceNum = new RegExp('^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$');
 const textSpace = new RegExp('^[A-Za-z _]*$');
